@@ -1,8 +1,11 @@
 # NetflixGPT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Use this test user or Create your own sign IN
+  // swaraj -> Name
+  // swarajnnd@gmail.com -> Email
+  // Swaraj1234@ -> Password
 
-Currently, two official plugins are available:
+# Want to contribute in it clone it make your own branch and create a pr and once i get to know it is worth it will be accepted ASAP or if not reach me out with my mail below
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Feel free to reach out to me 
+## Swrjnnd@gmail.com

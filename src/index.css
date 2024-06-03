@@ -5,3 +5,26 @@
 *{
     font-family: "Roboto", sans-serif;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar-thumb:horizontal {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;  
+  }
+
+
+.zoomed-iframe {
+    transform: scale(1.6);
+    transform-origin: center;
+}

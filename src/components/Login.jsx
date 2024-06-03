@@ -39,7 +39,7 @@ const Login = () => {
       ? signIn(email, password, auth)
       : signUp(email, password, auth, name, dispatch);
 
-    userData.then(() => navigate("/browse")).catch(() => navigate("/"));
+    // userData.then(() => navigate("/browse")).catch(() => navigate("/"));
 
   };
 

@@ -1,29 +1,54 @@
-import { signOut } from "firebase/auth";
-import { userIconImg, logo } from "../assets/imageLinks";
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { useEffect } from "react";
+import { userIconImg, logo } from "../utils/constants";
 import { auth } from "../firebase/Firebase";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";   
+import { useSelector, useDispatch } from "react-redux";   
+import { addUser, removeUser } from "../store/userSlice";
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const user = useSelector((appStore) => appStore.user);
-  // console.log(user);
+
+  useEffect(() => {
+    const authStateChange = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // console.log(user);
+        const { uid, displayName, email } = user;
+        dispatch(
+          addUser({
+            uid, displayName, email
+          })
+        );
+        navigate("/browse");
+
+      } else {
+        console.log("user not found");
+        dispatch(removeUser());
+        navigate("/");
+      }
+    });
+
+    return () => authStateChange();
+  }, []);
 
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        navigate("/");
+        console.log("Sign Out Sucessfully")
       })
-      .catch((error) => {
+      .catch((err) => {
         navigate("/error");
+        throw new Error(err);
       });
   };
 
   return (
-    <div className="absolute px-8 py-4 bg-gradient-to-b from-black w-full z-10 flex justify-between">
-      <img className="max-w-44" src={logo} />{" "}
+    <div className="absolute z-20 px-8 py-4 bg-gradient-to-b from-black w-full z-10 flex justify-between">
+      <img className="max-w-44 max-h-12 m-5" src={logo} />{" "}
       {user && (
-        <div className="flex">
+        <div className="flex m-2">
           <img
             src={userIconImg}
             alt="User Profile"

@@ -8,7 +8,6 @@ const VideoBG = ({ id }) => {
   );
   let trailerVideo = data.find((ele) => ele.type === "Trailer");
 
-  // overflow-hidden
   return (
     <div className="overflow-hidden">
       <iframe

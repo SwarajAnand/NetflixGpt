@@ -33,6 +33,7 @@ const Header = () => {
     return () => authStateChange();
   }, []);
 
+
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -43,7 +44,6 @@ const Header = () => {
         throw new Error(err);
       });
   };
-
   return (
     <div className="absolute z-20 px-8 py-4 bg-gradient-to-b from-black w-full z-10 flex justify-between">
       <img className="max-w-44 max-h-12 m-5" src={logo} />{" "}

@@ -15,6 +15,7 @@ export const signUp = async (emailAdd, password, auth, userName, dispatch) => {
     );
     const user = await userCredential.user;
 
+    
     updateProfile(user, {
       displayName: userName,
     }).then(() => {

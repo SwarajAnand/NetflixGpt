@@ -8,13 +8,13 @@ const MainContainer = () => {
   const [reload, setReload] = useState(false);
   const [nowPlayingData, nowPlayingLoading] = useFetch(nowPlayingUrl, GET);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setReload(!reload);
-  //   }, 135000)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setReload(!reload);
+    }, 135000)
 
-  //   return () => clearInterval(interval);
-  // }, [reload])
+    return () => clearInterval(interval);
+  }, [reload])
   
 
   if (nowPlayingLoading) return;

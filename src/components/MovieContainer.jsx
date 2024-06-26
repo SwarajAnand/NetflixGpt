@@ -4,13 +4,12 @@ import MovieList from "./MovieList"
 
 const MovieContainer = () => {
   return (
-    <div>
-    MOvies
-        {/* <MovieList link={nowPlayingUrl} method={GET}/> */}
-        {/* <MovieList link={trendingMovies} method={GET}/> */}
-        <MovieList link={topRatedMovies} method={GET}/>
-        <MovieList link={upcomingMovies} method={GET}/>
-        <MovieList link={tvTrending} method={GET}/>
+    <div className="bg-black text-white relative z-40">
+        <MovieList link={nowPlayingUrl} method={GET} title={"Now Playing"}/>
+        <MovieList link={trendingMovies} method={GET} title={"Trending Movies"}/>
+        <MovieList link={topRatedMovies} method={GET} title={"Top Rated"}/>
+        <MovieList link={upcomingMovies} method={GET} title={"Upcoming"}/>
+        <MovieList link={tvTrending} method={GET} title={"Television"}/>
     </div>
   )
 }
